@@ -3,11 +3,11 @@
 # so we have to add -nostdlib to the compiler configuration itself or
 # early compiler tests will fail. This can be removed when picolibc
 # requires at least version 0.54.2 of meson.
-c = ['ccache', 'arm-zephyr-eabi-gcc', '-nostdlib']
-ar = 'arm-zephyr-eabi-ar'
-as = 'arm-zephyr-eabi-as'
-nm = 'arm-zephyr-eabi-nm'
-strip = 'arm-zephyr-eabi-strip'
+c = ['ccache', '/opt/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc', '-nostdlib']
+ar = '/opt/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar'
+as = '/opt/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-as'
+nm = '/opt/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-nm'
+strip = '/opt/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-strip'
 # only needed to run tests
 exe_wrapper = ['sh', '-c', 'test -z "$PICOLIBC_TEST" || run-arm "$@"', 'run-arm']
 

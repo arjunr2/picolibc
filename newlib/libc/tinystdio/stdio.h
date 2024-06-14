@@ -58,7 +58,7 @@
  */
 
 #ifdef ATOMIC_UNGETC
-#if defined(__riscv) || defined(__MICROBLAZE__)
+#if defined(__riscv) || defined(__MICROBLAZE__) || defined (__wasm)
 /*
  * Use 32-bit ungetc storage when doing atomic ungetc on RISC-V and
  * MicroBlaze, which have 4-byte swap intrinsics but not 2-byte swap

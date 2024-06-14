@@ -105,6 +105,10 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # define _LONG_DOUBLE_IS_32BITS
 #endif
 
+#if (defined(__wasm__))
+#define __IEEE_LITTLE_ENDIAN
+#endif
+
 #if (defined(__arm__) || defined(__thumb__)) && !defined(__MAVERICK__)
 /* arm with hard fp and soft dp cannot use new float code */
 # if (__ARM_FP & 4) && !(__ARM_FP & 8)

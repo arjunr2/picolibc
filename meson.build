@@ -112,6 +112,8 @@ cpu_family_aliases = {
 		       'i586' : 'x86',
 		       'i686' : 'x86',
 		       'x86_64' : 'x86',
+           # wasm32
+           'wasm32': 'wasm32'
 		     }
 
 # Check for an alias, default to provided name
