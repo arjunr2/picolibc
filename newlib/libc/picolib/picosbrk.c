@@ -36,15 +36,15 @@
 #include <unistd.h>
 #include <errno.h>
 
-extern char __heap_start[];
+extern char __heap_base[];
 extern char __heap_end[];
 
-static char *brk = __heap_start;
+static char *brk = __heap_base;
 
 void *sbrk(ptrdiff_t incr)
 {
 	if (incr < 0) {
-                if ((size_t) (brk - __heap_start) < (size_t) (-incr)) {
+                if ((size_t) (brk - __heap_base) < (size_t) (-incr)) {
                     errno = ENOMEM;
                     return (void *) -1;
             }
