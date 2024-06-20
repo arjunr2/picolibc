@@ -16,7 +16,8 @@ clang --sysroot=/home/arjun/Documents/research/picolibc/install/picolibc/wasm32-
       hello_world.c -c -o hw.o
 
 wasm-ld --no-gc-sections -Linstall/picolibc/wasm32-wasi-threads/lib/ \
-    --allow-undefined --shared-memory --export-memory --max-memory=2147483648 --warn-unresolved-symbols \
+    --allow-undefined --shared-memory --export-memory --max-memory=131072 --warn-unresolved-symbols \
+    --export=__heap_base --export=__heap_end --export=__data_end \
     install/picolibc/wasm32-wasi-threads/lib/crt0.o hw.o -lc -lm \
     /home/arjun/Documents/research/wasm/wali/llvm-project/build/lib/clang/18/lib/wasi/libclang_rt.builtins-wasm32.a \
     -o hello_world.wasm
