@@ -135,6 +135,6 @@ __start(void)
 	exit(ret);
 #else
 	(void) ret;
-	for(;;);
+	//for(;;);
 #endif
 }
